@@ -99,7 +99,7 @@
                 </ul>
             </li>
 
-           <%-- <li class="br-menu-item">
+<%--            <li class="br-menu-item">
                 <a href="#" class="br-menu-link with-sub">
                     <i class="menu-item-icon ion-coffee tx-20"></i>
                     <span class="menu-item-label">Productos</span>
@@ -114,7 +114,7 @@
 
                     <li class="sub-item"><a href="" class="sub-link">Salida de productos</a></li>
                     <li class="sub-item"><a href="" class="sub-link">Reportes de productos</a></li>
-                    <%--                          <li class="sub-item"><a href="TipoProducto.aspx" class="sub-link">Categoria</a></li>--%>
+                                            <li class="sub-item"><a href="TipoProducto.aspx" class="sub-link">Categoria</a></li>
                 </ul>
             </li>--%>
 
