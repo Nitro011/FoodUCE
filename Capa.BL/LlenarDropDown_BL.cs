@@ -39,5 +39,11 @@ namespace Capa.BL
             return db.obtenerUnidadDeMedida();
         }
 
+        public List<Categoria_E> ObtenerCategoria()
+        {
+            return db.categoria();
+        }
+
+
     }
 }

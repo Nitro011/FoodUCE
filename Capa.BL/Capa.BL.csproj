@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin_BL.cs" />
+    <Compile Include="Almacen_BL.cs" />
     <Compile Include="Clientes_BL.cs" />
     <Compile Include="Empleado_BL.cs" />
     <Compile Include="InformacionUsuario_BL.cs" />

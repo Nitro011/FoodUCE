@@ -12,7 +12,8 @@ namespace Capa.Datos
    public class Productos_Ingredientes_DA
     {
 
-        string cnSTR = "data source=.;initial catalog=DerMark;user id = admin;password = 123456789";
+        string cnSTR = @"data source=DESKTOP-ALH0A74\SQLEXPRESS01;initial catalog=DerMark;Integrated Security=true";
+
 
         public object insertar(Productos_Ingredientes_E pe)
         {
@@ -42,43 +43,43 @@ namespace Capa.Datos
         }
 
 
-        public List<Productos_Ingredientes_E> obt_ingredientes()
-        {
-            List<Productos_Ingredientes_E> ingredientes = new List<Productos_Ingredientes_E>();
+        //public List<Productos_Ingredientes_E> obt_ingredientes()
+        //{
+        //    List<Productos_Ingredientes_E> ingredientes = new List<Productos_Ingredientes_E>();
 
 
 
-            using (SqlConnection cn = new SqlConnection(cnSTR))
-            {
-                cn.Open();
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "consultar_almacen_ingredientes";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //    using (SqlConnection cn = new SqlConnection(cnSTR))
+        //    {
+        //        cn.Open();
+        //        SqlCommand cmd = cn.CreateCommand();
+        //        cmd.CommandText = "consultar_almacen_ingredientes";
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    Productos_Ingredientes_E obj = new Productos_Ingredientes_E();
+        //        SqlDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            Productos_Ingredientes_E obj = new Productos_Ingredientes_E();
 
                     
-                    obj.nombres_productos = reader["nombre_producto"].ToString();
-                    obj.cantidad = Convert.ToInt32(reader["cantidad"].ToString());
-                    obj.unidadMedidastr =reader["unidad_de_medida"].ToString();
-                    obj.costo = Convert.ToDecimal(reader["costo"].ToString());
-                    obj.entradaI = Convert.ToDateTime(reader["entrada"].ToString());       
-                    obj.descripcion = reader["descripcion"].ToString();
-                    obj.estado = reader["estados"].ToString();
-                    ingredientes.Add(obj);
-                }
+        //            obj.nombres_productos = reader["nombre_producto"].ToString();
+        //            obj.cantidad = Convert.ToInt32(reader["cantidad"].ToString());
+        //            obj.unidadMedidastr =reader["unidad_de_medida"].ToString();
+        //            obj.costo = Convert.ToDecimal(reader["costo"].ToString());
+        //            obj.entradaI = Convert.ToDateTime(reader["entrada"].ToString());       
+        //            obj.descripcion = reader["descripcion"].ToString();
+        //            obj.estado = reader["estados"].ToString();
+        //            ingredientes.Add(obj);
+        //        }
 
 
 
-                return ingredientes;
+        //        return ingredientes;
 
-            }
+        //    }
 
-        }
+        //}
 
     }
 }

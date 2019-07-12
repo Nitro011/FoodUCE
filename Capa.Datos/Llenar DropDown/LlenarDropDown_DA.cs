@@ -12,7 +12,8 @@ namespace Capa.Datos.Llenar_DropDown
    public class LlenarDropDown_DA
     {
 
-        string cnSTR = "data source=.;initial catalog=DerMark;user id = admin;password = 123456789";
+        string cnSTR = @"data source=DESKTOP-ALH0A74\SQLEXPRESS01;initial catalog=DerMark;Integrated Security=true";
+
 
         public List<Pais_E> pais()
         {
@@ -268,6 +269,44 @@ namespace Capa.Datos.Llenar_DropDown
 
 
         }
+
+
+        public List<Categoria_E> categoria()
+        {
+
+
+            List<Categoria_E> obtenercategoria  = new List<Categoria_E>();
+
+
+
+            using (SqlConnection cn = new SqlConnection(cnSTR))
+            {
+                cn.Open();
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "ObtenerCategoria";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Categoria_E obj = new Categoria_E();
+
+                    obj.id = Convert.ToInt32(reader["categoriaId"].ToString());
+                    obj.categoria = reader["categoria"].ToString();
+
+                    obtenercategoria.Add(obj);
+                }
+
+                return obtenercategoria;
+
+            }
+
+
+
+
+        }
+
 
 
 

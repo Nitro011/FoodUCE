@@ -16,7 +16,7 @@
 
             <div class="col-xl-12">
                 <div class="form-layout form-layout-4">
-                    <h6 class="br-section-label">Agregar Productos Ingredientes</h6>
+                    <h6 class="br-section-label">Almacen</h6>
                     <%-- <p class="br-section-text">A basic form where labels are aligned in left.</p>--%>
                     <div class="row">
                         <label class="col-sm-4 form-control-label">Nombre del producto <span class="tx-danger">*</span></label>
@@ -24,6 +24,19 @@
                             <input type="text" class="form-control" id="np" placeholder="Nombre del producto" required="required">
                         </div>
                     </div>
+
+                    <div class="row mg-t-20">
+                        <label class="col-sm-4 form-control-label">Categoria <span class="tx-danger">*</span></label>
+                        <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                            <select id="categoria" class="custom-select" required="required">
+                                <option value="" selected>Selecciona</option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+
                     <!-- row -->
                     <div class="row mg-t-20">
                         <label class="col-sm-4 form-control-label">Cantidad <span class="tx-danger">*</span></label>
@@ -37,7 +50,7 @@
                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                             <select id="unidad_medida" class="custom-select" required="required">
                                 <option value="" selected>Selecciona</option>
-                              
+
 
 
                             </select>
@@ -47,21 +60,36 @@
                     <div class="row mg-t-20">
                         <label class="col-sm-4 form-control-label">Fecha de entrada <span class="tx-danger">*</span></label>
                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                            <input type="datetime-local" class="form-control" id="ent"  required="required">
+                            <input type="datetime-local" class="form-control" id="ent" required="required">
                         </div>
                     </div>
 
 
                     <div class="row mg-t-20">
-                     
-                            <label class="col-sm-4 form-control-label">Costo<span class="tx-danger">*</span></label>
-                            <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                                <input type="text" class="form-control" id="cost" placeholder="Costo" required="required">
-                            </div>
-               
+
+                        <label class="col-sm-4 form-control-label">Costo<span class="tx-danger">*</span></label>
+                        <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                            <input type="text" class="form-control" id="cost" placeholder="Costo" required="required">
+                        </div>
+
                     </div>
 
-                   
+                    <div class="row mg-t-20">
+
+                        <label class="col-sm-4 form-control-label">Precio de venta<span class="tx-danger">*</span></label>
+                        <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                            <input type="text" class="form-control" id="prcioventa" placeholder="Precio de venta" required="required">
+                        </div>
+
+                    </div>
+
+                    <div class="row mg-t-20">
+                        <label class="col-sm-4 form-control-label">Reposición <span class="tx-danger">*</span></label>
+                        <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                            <input type="number" id="reposicion" class="form-control" required="required">
+                        </div>
+                    </div>
+
                     <div class="row mg-t-20">
                         <label class="col-sm-4 form-control-label">Descripción <span class="tx-danger"></span></label>
                         <div class="col-sm-8 mg-t-10 mg-sm-t-0">

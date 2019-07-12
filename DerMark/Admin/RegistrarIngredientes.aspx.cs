@@ -17,29 +17,41 @@ namespace DerMark.Admin
 
         }
         [WebMethod]
-        public static object insertar(string nombreProducto, string cantidad, string unidadM,string descripcionP,string costo,string entradaI )
+        public static object insertar(string categoriaC,string unidad_de_medidaC,string nombre_ProductoC, string cantidadC,string costoC,string precio_ventaC,string entrada_del_productoC,string descripcionC,string reposicionC )
         {
 
-            int cantida1 = Convert.ToInt32(cantidad);
-            decimal unidadM1 = Convert.ToDecimal(unidadM);
-            DateTime entradaV = Convert.ToDateTime(entradaI);
-            decimal costo1 = Convert.ToDecimal(costo);
-       
-
-            Producto_Ingrediente_BL bc = new Producto_Ingrediente_BL();
+            Almacen_BL bc = new Almacen_BL();
 
 
-            Productos_Ingredientes_E pe = new Productos_Ingredientes_E();
+            Almacen_E alm = new Almacen_E();
 
-            pe.nombres_productos = nombreProducto;
-            pe.cantidad = cantida1;
-            pe.unidad_de_medida = unidadM1;
-            pe.descripcion = descripcionP;
-            pe.costo = costo1;
-            pe.entradaI = entradaV;
+            int categoriaV = Convert.ToInt32(categoriaC);
+            int unidadDeMedidaV = Convert.ToInt32(unidad_de_medidaC);
+            int cantidadV = Convert.ToInt32(cantidadC);
+            decimal costoV = Convert.ToDecimal(costoC);
+            decimal precio_ventaV = Convert.ToDecimal(precio_ventaC);
+            DateTime entrada_productoV = Convert.ToDateTime(entrada_del_productoC);
+            decimal reposicionV = Convert.ToDecimal(reposicionC);
+
+            alm.cantidad = categoriaV;
+            alm.unidad_de_medida = unidadDeMedidaV;
+            alm.nombre_producto = nombre_ProductoC;
+            alm.cantidad = cantidadV;
+            alm.costo = costoV;
+            alm.precio_venta = precio_ventaV;
+            alm.entrada_del_producto = entrada_productoV;
+            alm.reposicion = reposicionV;
+            alm.descripcion = descripcionC;
 
 
-            return bc.Insertar(pe);
+
+
+
+
+
+
+
+            return bc.Insertar(alm);
 
 
         }
@@ -51,8 +63,19 @@ namespace DerMark.Admin
 
             return ll.ObtenerUnidadDeMedida();
 
+        }
 
+        [WebMethod]
+        public static object llenarCategoria()
+        {
+            LlenarDropDown_BL ll = new LlenarDropDown_BL();
+
+            return ll.ObtenerCategoria();
 
         }
+
+
+
+
     }
 }

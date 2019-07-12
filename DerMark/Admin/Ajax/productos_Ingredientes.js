@@ -21,21 +21,32 @@
 
 function enviar1() {
 
-    var nombre_producto = $('#np').val();
-    var cantidad = $('#cantidadU').val()
-    var unidad_de_medida = $('#unidad_medida').val();
-    var descripcion = $('#descripcion').val();
-    var costov = $('#cost').val();
-    var entradaVI = $('#ent').val();
+    var nombre_productovc = $('#np').val();
+    var categoriavc = $('#categoria').val();
+    var cantidadvc = $('#cantidadU').val();
+    var unidad_de_medidavc = $('#unidad_medida').val();
+    var entradaVIc = $('#ent').val();
+    var costovc = $('#cost').val();
+    var prcventavc = $('#prcioventa').val();
+    var reposicionvc = $('#reposicion').val();
+    var descripcionvc = $('#descripcion').val();
+   
+  
 
-    if (nombre_producto == "") {
+    if (nombre_productovc == "") {
+
+        $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
+
+    }
+
+    if (categoriavc == "") {
 
         $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
 
     }
 
 
-    else if (cantidad == "") {
+    else if (cantidadvc == "") {
 
 
         $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
@@ -44,34 +55,46 @@ function enviar1() {
 
     
 
-    else if (unidad_de_medida == "") {
+    else if (unidad_de_medidavc== "") {
 
         $("#alerta").html('<div class="alert alert-info" role="alert"> Ingresar la unidad de medida </div>');
 
 
     }
 
-    else if (costov == "") {
+    else if (costovc == "") {
 
         $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
 
 
     }
 
-    else if (entradaVI == "") {
+    else if (entradaVIc == "") {
+        
+        $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
+
+
+    }
+    else if (prcventavc == "") {
 
         $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
 
 
     }
+    else if (reposicionvc == "") {
 
+        $("#alerta").html('<div class="alert alert-info" role="alert"> Datos incompletos </div>');
+
+
+    }
+  
    
 
         
 
     else {
 
-        var value = { nombreProducto: nombre_producto, cantidad: cantidad, unidadM: unidad_de_medida, descripcionP: descripcion, costo: costov, entradaI: entradaVI  };
+        var value = { categoriaC: categoriavc, unidad_de_medidaC: unidad_de_medidavc, nombre_ProductoC: nombre_productovc, cantidadC: cantidadvc, costoC: costovc, precio_ventaC: prcventavc, entrada_del_productoC: entradaVIc, descripcionC: descripcionvc, reposicionC: reposicionvc };
 
 
         $.ajax({
@@ -121,6 +144,29 @@ $(document).ready(function () {
 
 
                 $("#unidad_medida").append("<option value=" + value.id + ">" + value.unidad_de_medida + "</option>");
+            });
+
+
+        },
+        error: function (err) {
+            alert(err);
+        }
+    });
+
+});
+
+$(document).ready(function () {
+
+    $.ajax({
+        url: 'RegistrarIngredientes.aspx/llenarCategoria',
+        method: 'post',
+        contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            $.each(data.d, function (i, value) {
+
+
+                $("#categoria").append("<option value=" + value.id + ">" + value.categoria + "</option>");
             });
 
 

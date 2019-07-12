@@ -17,18 +17,18 @@ namespace DerMark.Admin
 
         }
 
-        [WebMethod]
-        public static object ObtenerIngredientes()
-        {
+        //[WebMethod]
+        //public static object ObtenerIngredientes()
+        //{
 
-            Producto_Ingrediente_BL pi = new Producto_Ingrediente_BL();
-
-
-            return pi.Obtener_ingedientes(); ;
+        //    Producto_Ingrediente_BL pi = new Producto_Ingrediente_BL();
 
 
+        //    return pi.Obtener_ingedientes(); ;
 
-        }
+
+
+        //}
 
     }
 }

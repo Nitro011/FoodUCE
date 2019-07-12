@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin_E.cs" />
+    <Compile Include="Almacen_E.cs" />
+    <Compile Include="Categoria_E.cs" />
     <Compile Include="Ciudad_E.cs" />
     <Compile Include="Clientes_E.cs" />
     <Compile Include="Empleado_E.cs" />

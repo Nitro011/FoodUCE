@@ -16,16 +16,16 @@ namespace DerMark.Admin
 
         }
 
-        [WebMethod]
-        public static object ObtenerProductos()
-        {
+        //[WebMethod]
+        //public static object ObtenerProductos()
+        //{
 
-            Producto_BL p = new Producto_BL();
-
-
-            return p.Obtener_Productos();
+        //    Producto_BL p = new Producto_BL();
 
 
-        }
+        //    return p.Obtener_Productos();
+
+
+        //}
     }
 }

@@ -17,10 +17,10 @@ namespace Capa.BL
         {
             return dbo.insertar(pro);
         }
-        public object Obtener_Productos()
-        {
-            return dbo.obt_producto();
-        }
+        //public object Obtener_Productos()
+        //{
+        //    return dbo.obt_producto();
+        //}
 
     }
 }

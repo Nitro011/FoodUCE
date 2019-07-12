@@ -10,7 +10,7 @@ namespace Capa.Datos
    public class Plato_DA
     {
 
-        string cnSTR = "data source=.;initial catalog=DerMark;user id = admin;password = 123456789";
+        string cnSTR = @"data source=DESKTOP-ALH0A74\SQLEXPRESS01;initial catalog=DerMark;Integrated Security=true";
 
         public object insertar(Plato_E ple)
         {

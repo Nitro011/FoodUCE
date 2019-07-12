@@ -17,7 +17,8 @@ namespace Capa.Datos
         public object insertar(Clientes_E ce)
         {
 
-            string cnSTR = "data source=.;initial catalog=DerMark;user id = admin;password = 123456789";
+            string cnSTR = @"data source=DESKTOP-ALH0A74\SQLEXPRESS01;initial catalog=DerMark;Integrated Security=true";
+
 
             using (SqlConnection cn = new SqlConnection(cnSTR))
             {
